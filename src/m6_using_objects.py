@@ -5,8 +5,8 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and William Makinen.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -14,6 +14,8 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
+    two_circles()
+    circle_and_rectangle()
 
 
 def two_circles():
@@ -26,8 +28,32 @@ def two_circles():
            -- One is filled with some color and one is not filled.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    width = 800
+    height = 800
+    window = rg.RoseWindow(width, height)
+
+    center_point1 = rg.Point(400, 400)
+    center_point2 = rg.Point(220, 100)
+    radius1 = 100
+    radius2 = 20
+
+    circle1 = rg.Circle(center_point1, radius1)
+    circle1.fill_color = 'red'
+    circle1.attach_to(window)
+
+    circle2 = rg.Circle(center_point2, radius2)
+    circle2.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
+
+
+
+
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -66,6 +92,46 @@ def circle_and_rectangle():
            75.0
            150.0
     """
+
+    width = 800
+    height = 800
+    window = rg.RoseWindow(width, height)
+
+    center_point = rg.Point(400, 400)
+    radius = 200
+
+    circle = rg.Circle(center_point, radius)
+    circle.fill_color = 'blue'
+    circle.attach_to(window)
+
+    p1 = rg.Point(600, 700)
+    p2 = rg.Point(700, 100)
+    rectangle = rg.Rectangle(p1, p2)
+    rectangle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
+    print('Circle Data:')
+    print(1)
+    print(circle.fill_color)
+    print(center_point)
+    print('x=', 400)
+    print('y=', 400)
+    print('Rectangle Data:')
+    print(1)
+    print('none')
+    print('Point(650, 300)')
+    print('x=',650)
+    print('y=', 300)
+
+
+
+
+
+
+
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
